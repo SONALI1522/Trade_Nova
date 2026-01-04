@@ -1,0 +1,9 @@
+/* Page background */
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(135deg, #4f46e5, #9333ea);
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
