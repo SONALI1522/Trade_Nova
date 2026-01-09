@@ -20,14 +20,14 @@ const Login = () => {
   alert("Password is required");
   return;
   }
-  const res = await axios.post("${API}/login", 
+  const res = await axios.post(`${API}/login`, 
     {
       email,
       password,
     },
     { withCredentials: true }
 );
-  window.location.href = "${API2}/";
+  window.location.href = `${API2}/`;
   console.log('login successful');
   alert("Login successful!");
   } catch (err) {

@@ -19,7 +19,7 @@ const Signup = () => {
     e.preventDefault(); // stop page reload
 
     try {
-      const res = await axios.post("${API}/signup", 
+      const res = await axios.post(`${API}/signup`, 
       {
         email,
         password,
@@ -29,7 +29,7 @@ const Signup = () => {
     );
       
       alert("Signup successful!");
-      window.location.href = "${API2}/";
+      window.location.href = `${API2}/`;
     } catch (err) {
      if (err.response && err.response.status === 409) {
        alert(err.response.data.message);

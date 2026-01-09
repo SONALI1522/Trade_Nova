@@ -21,7 +21,7 @@ const Menu = () => {
 const handleLogout = async () => {
   try {
     await axios.post(
-      "${API}/logout",
+      `${API}/logout`,
       {}, 
       { withCredentials: true }
     );
@@ -29,7 +29,7 @@ const handleLogout = async () => {
     localStorage.clear();
     sessionStorage.clear();
 
-    window.location.href = "${API}/";
+    window.location.href = `${API}/`;
   } catch (err) {
     console.error("Logout failed", err);
   }

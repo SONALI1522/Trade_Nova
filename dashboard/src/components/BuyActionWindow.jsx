@@ -11,7 +11,7 @@ const BuyActionWindow = ({ uid }) => {
 
   const handleBuyClick = async () => {
     console.log("BUY CLICKED");
-    await axios.post("${API}/newBuyOrder", {
+    await axios.post(`${API}/newBuyOrder`, {
       name: uid,
       qty: stockQuantity,
       price: stockPrice,

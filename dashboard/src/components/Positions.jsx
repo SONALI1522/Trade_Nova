@@ -9,7 +9,7 @@ const Positions = () => {
   const [allPositions, setAllPositions] = useState([]);
 
   useEffect(() => {
-    axios.get("${API}/allPositions",{ withCredentials: true }).then((res) => {
+    axios.get(`${API}/allPositions`,{ withCredentials: true }).then((res) => {
       console.log(res.data);
       setAllPositions(res.data);//res is array of objects that we stored in db
     });

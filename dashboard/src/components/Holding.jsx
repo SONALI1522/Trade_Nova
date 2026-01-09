@@ -13,7 +13,7 @@ import API from "../config/api";
 
   useEffect(() => {
   axios
-    .get("${API}/allHoldings", { withCredentials: true })
+    .get(`${API}/allHoldings`, { withCredentials: true })
     .then((res) => {
       setAllHoldings(res.data);
     })
@@ -27,7 +27,7 @@ import API from "../config/api";
       setAIExplanation("");
 
       const res = await axios.post(
-        "${API}/ai-explain",
+        `${API}/ai-explain`,
         { holdings: allHoldings },
         { withCredentials: true }
       );

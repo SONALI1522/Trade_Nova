@@ -14,7 +14,7 @@ const handleSellClick = async () => {
   console.log("sell triggered");
 
   await axios.post(
-    "${API}//newSellOrder",
+    `${API}//newSellOrder`,
     {
       name: uid,
       qty: stockQuantity,
