@@ -3,6 +3,7 @@ import "./Login.css";
 import axios from "axios";
 import API from "../config/api";
 import { useNavigate } from "react-router-dom";
+const API2 = import.meta.env.VITE_DASHBOARD_RENDER_URL ;
 
 const Login = () => {
   const [email, setEmail] = useState("");
@@ -26,7 +27,7 @@ const Login = () => {
     },
     { withCredentials: true }
 );
-  window.location.href = "${API}/";
+  window.location.href = "${API2}/";
   console.log('login successful');
   alert("Login successful!");
   } catch (err) {

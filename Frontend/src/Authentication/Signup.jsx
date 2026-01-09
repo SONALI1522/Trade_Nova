@@ -3,7 +3,7 @@ import axios from "axios";
 import "./Signup.css";
 import { useNavigate } from "react-router-dom";
 import API from "../config/api";
-
+const API2 = import.meta.env.VITE_DASHBOARD_RENDER_URL 
 const Signup = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -29,7 +29,7 @@ const Signup = () => {
     );
       
       alert("Signup successful!");
-      window.location.href = "${API}/";
+      window.location.href = "${API2}/";
     } catch (err) {
      if (err.response && err.response.status === 409) {
        alert(err.response.data.message);
