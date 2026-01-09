@@ -3,8 +3,7 @@ import "./Login.css";
 import axios from "axios";
 import API from "../config/api";
 import { useNavigate } from "react-router-dom";
-const API2 = import.meta.env.VITE_DASHBOARD_RENDER_URL ;
-
+const DASHBOARD_URL = import.meta.env.VITE_DASHBOARD_RENDER_URL;
 const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -27,7 +26,8 @@ const Login = () => {
     },
     { withCredentials: true }
 );
-  window.location.href = `${API2}/`;
+// redirect to dashboard app
+  window.location.href = DASHBOARD_URL;  
   console.log('login successful');
   alert("Login successful!");
   } catch (err) {
