@@ -3,6 +3,8 @@ import React, { useState, useEffect } from "react";
 import "./Holding.css";
 import axios, { all } from "axios"; 
 import { VerticalGraph } from "./VerticalGraph";
+import API from "../config/api";
+
  const Holdings = () => { 
  
   const [allHoldings, setAllHoldings] = useState([]); 
@@ -11,7 +13,7 @@ import { VerticalGraph } from "./VerticalGraph";
 
   useEffect(() => {
   axios
-    .get("http://localhost:3002/allHoldings", { withCredentials: true })
+    .get("${API}/allHoldings", { withCredentials: true })
     .then((res) => {
       setAllHoldings(res.data);
     })
@@ -25,7 +27,7 @@ import { VerticalGraph } from "./VerticalGraph";
       setAIExplanation("");
 
       const res = await axios.post(
-        "http://localhost:3002/ai-explain",
+        "${API}/ai-explain",
         { holdings: allHoldings },
         { withCredentials: true }
       );

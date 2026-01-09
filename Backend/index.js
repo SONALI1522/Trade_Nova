@@ -24,10 +24,19 @@ app.use(bodyParser.json());
 app.use(cookieParser());
 app.use(
   cors({
-    origin: ["http://localhost:5173", "http://localhost:5174"],
+    origin: [
+      "http://localhost:5173", 
+      "http://localhost:5174",
+      "https://tradenova-frontend-ghct.onrender.com",
+      "https://tradenova-dashboard-vvai.onrender.com",
+    ],
     credentials: true,
   })
 );
+
+app.get("/",(req,res)=>{
+  res.send("Backend is running");
+});
 
 // app.get("/addHoldings", async (req, res) => {
 //   let tempHoldings = [

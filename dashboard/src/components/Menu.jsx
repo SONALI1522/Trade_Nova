@@ -2,6 +2,7 @@ import React from 'react';
 import { useState } from 'react';
 import { Link } from "react-router-dom";
 import axios from "axios";
+import API from "../config/api";
 
 const Menu = () => {
   const [selectedMenu, setSelectedMenu] = useState(0);
@@ -20,7 +21,7 @@ const Menu = () => {
 const handleLogout = async () => {
   try {
     await axios.post(
-      "http://localhost:3002/logout",
+      "${API}/logout",
       {}, 
       { withCredentials: true }
     );
@@ -28,7 +29,7 @@ const handleLogout = async () => {
     localStorage.clear();
     sessionStorage.clear();
 
-    window.location.href = "http://localhost:5173/";
+    window.location.href = "${API}/";
   } catch (err) {
     console.error("Logout failed", err);
   }

@@ -2,13 +2,14 @@ import React, { useState, useEffect } from "react";
 import axios, { all } from "axios";
 import {holdings} from '../data/data';
 import { positions } from "../data/data";
+import API from "../config/api";
 
 const Positions = () => {
 
   const [allPositions, setAllPositions] = useState([]);
 
   useEffect(() => {
-    axios.get("http://localhost:3002/allPositions",{ withCredentials: true }).then((res) => {
+    axios.get("${API}/allPositions",{ withCredentials: true }).then((res) => {
       console.log(res.data);
       setAllPositions(res.data);//res is array of objects that we stored in db
     });

@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import axios from "axios";
 import "./Signup.css";
 import { useNavigate } from "react-router-dom";
+import API from "../config/api";
 
 const Signup = () => {
   const [email, setEmail] = useState("");
@@ -18,7 +19,7 @@ const Signup = () => {
     e.preventDefault(); // stop page reload
 
     try {
-      const res = await axios.post("http://localhost:3002/signup", 
+      const res = await axios.post("${API}/signup", 
       {
         email,
         password,
@@ -28,7 +29,7 @@ const Signup = () => {
     );
       
       alert("Signup successful!");
-      window.location.href = "http://localhost:5174/";
+      window.location.href = "${API}/";
     } catch (err) {
      if (err.response && err.response.status === 409) {
        alert(err.response.data.message);

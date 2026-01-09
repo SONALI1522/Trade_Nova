@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import "./Login.css";
 import axios from "axios";
+import API from "../config/api";
 import { useNavigate } from "react-router-dom";
 
 const Login = () => {
@@ -18,14 +19,14 @@ const Login = () => {
   alert("Password is required");
   return;
   }
-  const res = await axios.post("http://localhost:3002/login", 
+  const res = await axios.post("${API}/login", 
     {
       email,
       password,
     },
     { withCredentials: true }
 );
-  window.location.href = "http://localhost:5174/";
+  window.location.href = "${API}/";
   console.log('login successful');
   alert("Login successful!");
   } catch (err) {
