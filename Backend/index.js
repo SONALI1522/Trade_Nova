@@ -319,11 +319,12 @@ app.get("/allPositions", async (req, res) => {
 });
 
 /* ---------------- BUY ---------------- */
-app.post("/newBuyOrder",async (req, res) => {
+app.post("/newBuyOrder",isLoggedIn, async (req, res) => {
 try{
   console.log("newBuywindow active ");
   let { name, qty, price, mode } = req.body;
   let newOrder = new OrdersModel({
+    owner: req.user.userId,
     name :name,
     qty : qty,
     price : price,
