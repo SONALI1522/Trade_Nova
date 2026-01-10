@@ -34,9 +34,7 @@ app.use(
   })
 );
 
-app.get("/",(req,res)=>{
-  res.send("Backend is running");
-});
+
 
 // app.get("/addHoldings", async (req, res) => {
 //   let tempHoldings = [
@@ -230,8 +228,8 @@ app.post("/signup", async (req, res) => {
 
     res.cookie("token", token, {
       httpOnly: true,
-      sameSite: "Lax",
-      secure: false // OK for localhost
+      sameSite: "none",
+      secure: true, 
     });
 
     res.status(200).json({ message: "User signed up successfully" });
@@ -259,8 +257,8 @@ app.post("/login", async (req, res) => {
 
     res.cookie("token", token, {
       httpOnly: true,
-      sameSite: "Lax",
-      secure: false // OK for localhost
+      sameSite: "none",
+      secure: true, 
     });
 
     res.status(200).json({ message: "User signed up successfully" });
