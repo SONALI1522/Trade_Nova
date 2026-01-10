@@ -375,6 +375,7 @@ app.post("/newSellOrder", isLoggedIn, async (req, res) => {
     const { name, qty, price } = req.body;
 
     const newOrder = new OrdersModel({
+      owner: req.user.userId,
       name,
       qty,
       price,
