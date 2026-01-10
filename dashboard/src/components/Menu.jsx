@@ -3,7 +3,7 @@ import { useState } from 'react';
 import { Link } from "react-router-dom";
 import axios from "axios";
 import API from "../config/api";
-
+const FRONTEND_URL = import.meta.env.VITE_FRONTEND_RENDER_URL;
 const Menu = () => {
   const [selectedMenu, setSelectedMenu] = useState(0);
     const [isOpen, setIsOpen] = useState(false);
@@ -29,7 +29,7 @@ const handleLogout = async () => {
     localStorage.clear();
     sessionStorage.clear();
 
-    window.location.href = `${API}/`;
+    window.location.href = FRONTEND_URL;
   } catch (err) {
     console.error("Logout failed", err);
   }
