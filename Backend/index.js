@@ -27,8 +27,8 @@ app.use(
     origin: [
       "http://localhost:5173", 
       "http://localhost:5174",
-      "https://tradenova-frontend-ghct.onrender.com",
-      "https://tradenova-dashboard-vvai.onrender.com",
+      process.env.VITE_FRONTEND_RENDER_URL,
+      process.env.VITE_DASHBOARD_RENDER_URL,
     ],
     credentials: true,
   })
