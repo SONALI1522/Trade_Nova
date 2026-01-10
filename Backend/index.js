@@ -324,11 +324,11 @@ try{
   console.log("newBuywindow active ");
   let { name, qty, price, mode } = req.body;
   let newOrder = new OrdersModel({
-    owner: req.user.userId,
     name :name,
     qty : qty,
     price : price,
     mode : mode,
+    owner: req.user.userId,
   });
   console.log("Saving order...");
   await newOrder.save();
@@ -375,7 +375,6 @@ app.post("/newSellOrder", isLoggedIn, async (req, res) => {
     const { name, qty, price } = req.body;
 
     const newOrder = new OrdersModel({
-      owner: req.user.userId,
       name,
       qty,
       price,
