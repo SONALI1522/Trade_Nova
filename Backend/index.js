@@ -319,7 +319,7 @@ app.get("/allPositions", async (req, res) => {
 });
 
 /* ---------------- BUY ---------------- */
-app.post("/newBuyOrder", isLoggedIn,async (req, res) => {
+app.post("/newBuyOrder",async (req, res) => {
 try{
   console.log("newBuywindow active ");
   let { name, qty, price, mode } = req.body;
